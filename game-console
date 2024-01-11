@@ -1,0 +1,58 @@
+var game = new Game();
+Console.WriteLine("game/winner");
+string mode = Console.ReadLine();
+
+if (mode == "game")
+{
+    Console.WriteLine("Play Now!");
+    while (true)
+    {
+        string s = Console.ReadLine();
+        string player = s.Split(';')[0];
+        int number = Convert.ToInt32(s.Split(';')[1]);
+        game.TryGuess(player, number);
+    }
+}
+else if(mode == "winner")
+{
+    Console.WriteLine(game.GetWinner());
+}
+
+class Game
+{
+    private int _winNumber;
+    private Random _rn;
+    private const string _winnerFile = "winner.txt";
+
+    public Game()
+    {
+        _rn = new Random();
+        _winNumber = _rn.Next(1,5);
+    }
+
+    public void TryGuess(string player,int number)
+    {
+        if (number == _winNumber)
+        {
+            Console.WriteLine("you win");
+            File.WriteAllText(_winnerFile, player);
+            _winNumber = _rn.Next(1, 5);
+        }
+        else        
+            Console.WriteLine($"next player");        
+    }
+
+    public string GetWinner()
+    {
+        if (File.Exists(_winnerFile))
+            return File.ReadAllText(_winnerFile);
+        else
+            return "no winner";
+    }
+}
+
+//Wprowadzić zmiany wg wymagania:
+//Gracze mają mieć możliwość grać jednocześnie - kto szybszy ten leprzy.
+
+
+
