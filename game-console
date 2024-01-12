@@ -1,5 +1,8 @@
+
 var game = new Game();
+
 Console.WriteLine("game/winner");
+
 string mode = Console.ReadLine();
 
 if (mode == "game")
@@ -51,7 +54,7 @@ class Game
     }
 }
 
-//Wprowadzić zmiany wg wymagania:
+//Wprowadzić zmiany wg WYMAGANIA:
 //Gracze mają mieć możliwość grać jednocześnie - kto szybszy ten leprzy.
 
 
