@@ -1,1 +1,13 @@
 ms replica k8s
+
+# cmd 
+apt install podman-docker
+alias p=podman
+p login
+cd /ms/nginx1
+echo 'app 1.0' > index.html
+#Dockerfile
+FROM docker.io/library/nginx
+COPY index.html /usr/share/nginx/html/index.html
+
+
