@@ -15,8 +15,7 @@ COPY index.html /usr/share/nginx/html/index.html
 p build -t docker.io/n507592979/ms:v12 .
 p push docker.io/n507592979/ms:v12
 
-while true; do curl master:30011;sleep 1;done
-
+https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 apiVersion: v1
 kind: Pod
 metadata:
@@ -28,6 +27,7 @@ spec:
   imagePullSecrets:
   - name: regcred
 
+while true; do curl master:30011;sleep 1;done
 
 
 
