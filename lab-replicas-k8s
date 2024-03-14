@@ -1,7 +1,7 @@
 ms replica k8s
 # plan
 deploy strategy: rollout, blue-green, canary
- 
+lab:
 # cmd 
 apt install podman-docker
 alias p=podman
