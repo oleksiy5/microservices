@@ -1,5 +1,6 @@
 ms replica k8s
 # plan
+(dazyc do orchestracji i przyczyna to skomplikowany przypadek)
 (simple example fokus on subcject zerodowntown, deploy strategy and replicas)
 deploy strategy: rollout, blue-green, canary (based on replicas all strategy)
 lab:
