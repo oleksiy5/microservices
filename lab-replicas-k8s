@@ -1,6 +1,6 @@
 ms replica k8s
 # plan
-
+(simple example fokus on subcject)
 deploy strategy: rollout, blue-green, canary (based on replicas all strategy)
 lab:
 # cmd 
@@ -14,6 +14,8 @@ FROM docker.io/library/nginx
 COPY index.html /usr/share/nginx/html/index.html
 p build -t docker.io/n507592979/ms:v12 .
 p push docker.io/n507592979/ms:v12
+
+
 
 
 
