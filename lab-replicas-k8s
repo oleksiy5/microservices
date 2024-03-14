@@ -1,5 +1,6 @@
 ms replica k8s
 # plan
+replicas
 deploy strategy: rollout, blue-green, canary
 lab:
 # cmd 
