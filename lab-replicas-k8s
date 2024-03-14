@@ -1,12 +1,12 @@
 ms replica k8s
 # plan
-(simple example fokus on subcject)
+(simple example fokus on subcject zerodowntown, deploy strategy and replicas)
 deploy strategy: rollout, blue-green, canary (based on replicas all strategy)
 lab:
 # cmd 
 apt install podman-docker
 alias p=podman
-p login
+p login docker.io
 cd /ms/nginx1
 echo 'app 1.0' > index.html
 #Dockerfile
