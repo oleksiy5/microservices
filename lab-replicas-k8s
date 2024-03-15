@@ -53,9 +53,35 @@ spec:
   type: NodePort
 
 
-chenge wersion and show downtime
+chenge wersion and show downtime, do this how whole process looks
 
+/2/
+replicas deployment and scaling 
 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: app
+  name: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app
+    spec:
+      containers:
+      - image: docker.io/n507592979/ms:v3
+        name: ms
+        resources: {}
+status: {}
 
 
 
