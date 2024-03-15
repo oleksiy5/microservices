@@ -17,6 +17,11 @@ p build -t docker.io/n507592979/ms:v12 .
 p push docker.io/n507592979/ms:v12
 
 https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
+
+> scenario 1
+while true; do curl master:30011;date;sleep 1;clear;done
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -28,7 +33,8 @@ spec:
   imagePullSecrets:
   - name: regcred
 
-while true; do curl master:30011;sleep 1;done
+chenge wersion and show downtime
+
 
 
 
