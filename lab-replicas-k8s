@@ -164,4 +164,10 @@ spec:
 status: {}
 
 
+/3/ canary deployment
+deploy current version
+deploy the nw version
+route trafic to of small percent eg 5%-10%, do this ba decres incresase replicas
+
+
 
