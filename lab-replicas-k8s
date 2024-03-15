@@ -56,7 +56,7 @@ spec:
 chenge wersion and show downtime, do this how whole process looks
 
 /2/
-replicas deployment and scaling 
+replicas deployment and scaling, rollout and stretegy deploy part
 
 apiVersion: apps/v1
 kind: Deployment
@@ -70,7 +70,11 @@ spec:
   selector:
     matchLabels:
       app: app
-  strategy: {}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       creationTimestamp: null
@@ -78,10 +82,11 @@ spec:
         app: app
     spec:
       containers:
-      - image: docker.io/n507592979/ms:v3
+      - image: docker.io/n507592979/ms:v4
         name: ms
         resources: {}
 status: {}
+
 
 k rollout undo - wycofanie sie 
 
