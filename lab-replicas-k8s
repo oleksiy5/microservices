@@ -98,4 +98,70 @@ Test green deployment: before SWITCHING trafic test new version
 Switch trafic from the blue to the green. This could be done by updateing a load balancer configuration or DNS setting to direct trafic to the green enviroment.
 Show benefits on this solution, wane is a zerodwon time and posibility to downgrade.
 
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: blue
+  name: blue-green
+spec:
+  ports:
+  - nodePort: 30022
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: blue
+  sessionAffinity: None
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: blue
+  name: app-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blue
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: blue
+    spec:
+      containers:
+      - image: docker.io/n507592979/ms:v3
+        name: ms
+        resources: {}
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: green
+  name: app-g
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: green
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: green
+    spec:
+      containers:
+      - image: docker.io/n507592979/ms:v4
+        name: ms
+        resources: {}
+status: {}
+
+
 
