@@ -26,12 +26,32 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: app
+  labels:
+    app: app
 spec:
   containers:
-  - name: private-reg-container
-    image: docker.io/n507592979/ms:v2
+  - name: app
+    image: docker.io/n507592979/ms:v4
   imagePullSecrets:
   - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: app
+  name: app
+spec:
+  ports:
+  - nodePort: 30011
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: app
+  sessionAffinity: None
+  type: NodePort
+
 
 chenge wersion and show downtime
 
