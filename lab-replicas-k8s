@@ -21,6 +21,7 @@ https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-regi
 
 > scenario 1
 while true; do curl master:30011;date;sleep 1;clear;done
+watch kubectl get po -owide
 
 apiVersion: v1
 kind: Pod
