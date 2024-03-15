@@ -83,5 +83,9 @@ spec:
         resources: {}
 status: {}
 
+k rollout undo - wycofanie sie 
+
+/3/ blue-green
+
 
 
