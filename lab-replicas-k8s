@@ -92,6 +92,10 @@ status: {}
 k rollout undo - wycofanie sie 
 
 /3/ blue-green
-
+set up two indentical enviroment refer to blue and green. Both shoudl have the same resource and configuration.
+Deploy a new version to Inactive Enviroment, blue currently serve to produciton trafic. You would deploy a new wersion to the green deployment
+Test green deployment: before SWITCHING trafic test new version 
+Switch trafic from the blue to the green. This could be done by updateing a load balancer configuration or DNS setting to direct trafic to the green enviroment.
+Show benefits on this solution, wane is a zerodwon time and posibility to downgrade.
 
 
